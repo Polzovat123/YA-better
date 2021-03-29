@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="left"
+        android:src="@drawable/png_clipart_russia_gazprom_neft_natural_gas_company_gas_text_logo"
+        />
+
+    <TextView
+        android:id="@+id/tv_item"
+        android:layout_width="wrap_content"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:fontFamily="monospace"
+        android:textSize="42sp"
+        />
+    <TextView
+        android:id="@+id/tv_item_holder"
+        android:layout_width="wrap_content"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|end"
+        android:fontFamily="monospace"
+        android:textColor="#000"
+        />
+</FrameLayout>
