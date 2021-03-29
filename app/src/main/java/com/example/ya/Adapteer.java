@@ -1,13 +1,19 @@
 package com.example.ya;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Icon;
 import android.media.Image;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.concurrent.TimeoutException;
@@ -16,7 +22,8 @@ public class Adapteer extends RecyclerView.Adapter<Adapteer.NumberViewHolder>{
 
     private static int viewHolderCount;
     private int numItems;
-    private static Image []viewImage;
+    private static ImageView viewimage;
+    private static ImageView[] viewImage;
     private static String []listCompany;
 
     public Adapteer(int num){
@@ -24,16 +31,11 @@ public class Adapteer extends RecyclerView.Adapter<Adapteer.NumberViewHolder>{
         viewHolderCount = 0;
     }
 
-    public Adapteer(int num, Image[] n){
-        numItems = num;
-        viewHolderCount = 0;
-        viewImage = n;
-    }
-
-    public Adapteer(int num, String[] n){
+    public Adapteer(int num, String[] n, ImageView[] h){
         numItems = num;
         viewHolderCount = 0;
         listCompany = n;
+        viewImage = h;
     }
 
     @NonNull
@@ -75,12 +77,15 @@ public class Adapteer extends RecyclerView.Adapter<Adapteer.NumberViewHolder>{
 
             listitemnumberView = view.findViewById(R.id.tv_item);
             text_view_holder = view.findViewById(R.id.rv_numbers);
-
+            viewimage = view.findViewById(R.id.img);
 
         }
 
         void bind(int list){
             listitemnumberView.setText(listCompany[list]);
+            //BitmapDrawable drawable = (BitmapDrawable) viewImage[list].getDrawable();
+            //Bitmap bitmap = drawable.getBitmap();
+            //viewimage.setImageBitmap(bitmap);
         }
 
     }
