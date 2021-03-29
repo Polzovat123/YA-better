@@ -17,6 +17,7 @@ public class Adapteer extends RecyclerView.Adapter<Adapteer.NumberViewHolder>{
     private static int viewHolderCount;
     private int numItems;
     private static Image []viewImage;
+    private static String []listCompany;
 
     public Adapteer(int num){
         numItems = num;
@@ -27,6 +28,12 @@ public class Adapteer extends RecyclerView.Adapter<Adapteer.NumberViewHolder>{
         numItems = num;
         viewHolderCount = 0;
         viewImage = n;
+    }
+
+    public Adapteer(int num, String[] n){
+        numItems = num;
+        viewHolderCount = 0;
+        listCompany = n;
     }
 
     @NonNull
@@ -73,7 +80,7 @@ public class Adapteer extends RecyclerView.Adapter<Adapteer.NumberViewHolder>{
         }
 
         void bind(int list){
-            listitemnumberView.setText(String.valueOf(list));
+            listitemnumberView.setText(listCompany[list]);
         }
 
     }

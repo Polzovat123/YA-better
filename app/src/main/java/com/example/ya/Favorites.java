@@ -31,28 +31,32 @@ public class Favorites extends AppCompatActivity {
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         numberList.setLayoutManager(layoutManager);
-
-        numberAdaper = new Adapteer(100);
-        numberList.setAdapter(numberAdaper);
         parse_bcs("https://bcs-express.ru/kotirovki-i-grafiki");
+        numberAdaper = new Adapteer(15, nameCompanies);
+        numberList.setAdapter(numberAdaper);
+
 
     }
 
     protected void get_new_img() throws MalformedURLException {
-
+        listImage = new Image[0];
     }
 
     protected void parse_bcs(String URL) {
+        /*
+        Document doc = null;
         try {
-            Document doc = (Document) Jsoup.connect("https://bcs-express.ru/kotirovki-i-grafiki").get();
-            System.out.println("We sucsesful open doc");
-            System.out.println(doc);
-            Element naming = doc.getElementById("div.quotes-list-item js-quotes-list-item js-quotes-portfolios-item _up");
-            System.out.println(naming);
-                    //select("div.quotes-list-item js-quotes-list-item js-quotes-portfolios-item _up");
+            doc = (Document) Jsoup.connect(URL).get();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println("We sucsesful open doc");
+            System.out.println(doc);
+            Element naming = doc.getElementById("div.quotes-list-item js-quotes-list-item js-quotes-portfolios-item _up");
+            System.out.println(naming);
+        //*/
+                    //select("div.quotes-list-item js-quotes-list-item js-quotes-portfolios-item _up");
+        nameCompanies = new String[]{"GAzprom", "Ufa", "Google", "Apple", "Tesla", "GAzprom", "Ufa", "Google", "Apple", "Tesla", "GAzprom", "Ufa", "Google", "Apple", "Tesla"};
     }
 
 }
